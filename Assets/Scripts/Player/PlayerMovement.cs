@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 
 [System.Serializable]
 public class Boundry
@@ -12,6 +12,7 @@ public class Boundry
 public class PlayerMovement : MonoBehaviour
 {
     public float playerMovementSpeed = 0.0f;
+    public Boundry boundry;
 
     private GameObject player = null;
     private Rigidbody2D playerRigidBody;
@@ -36,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
 
         playerRigidBody.velocity = new Vector2(moveHorizontal, moveVertical) * playerMovementSpeed;
         playerRigidBody.velocity.Normalize();
+
+        playerRigidBody.position = new Vector3
+        (
+            Mathf.Clamp(playerRigidBody.position.x, boundry.xMin, boundry.xMax),
+            Mathf.Clamp(playerRigidBody.position.y, boundry.yMin, boundry.yMax),
+            0.0f
+        );
 
     }
 
