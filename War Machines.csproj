@@ -90,6 +90,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemies\EnemyClasses\BaseEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyClasses\ChargerEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyClasses\InterceptorEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyClasses\StandardEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyProjectiles\EnemyProjectile.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
   </ItemGroup>
