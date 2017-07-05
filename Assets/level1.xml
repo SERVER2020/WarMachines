@@ -1,0 +1,11 @@
+<LEVEL1>
+  <CHECKPOINT>
+    <ENEMYDATA>
+      
+      <ENEMY>Bomber</ENEMY>
+      <SPAWNERPOSITION>50</SPAWNERPOSITION>
+      <TIME>4</TIME>
+      
+    </ENEMYDATA>
+  </CHECKPOINT>
+</LEVEL1>
