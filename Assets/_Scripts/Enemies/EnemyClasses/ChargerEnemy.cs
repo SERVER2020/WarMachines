@@ -5,6 +5,13 @@ using UnityEngine;
 public class ChargerEnemy : BaseEnemy
 {
 
+    LayerMask player;
+
+    private void Start()
+    {
+        player = 1 << LayerMask.NameToLayer("Player");
+    }
+
     void Update()
     {
         _Move();
@@ -18,9 +25,9 @@ public class ChargerEnemy : BaseEnemy
 
     protected override void _Charge()
     {
-        Vector3 down = transform.TransformDirection(Vector3.down);
+        Vector2 down = transform.TransformDirection(Vector2.down);
 
-        if (Physics.Raycast(transform.position, down, 7))
+        if (Physics2D.Raycast(transform.position, down, 7, player.value))
             _stats.speed = 10;
     }
 }
