@@ -27,7 +27,7 @@ public class ChargerEnemy : BaseEnemy
     {
         Vector2 down = transform.TransformDirection(Vector2.down);
 
-        if (Physics2D.Raycast(transform.position, down, 7, player.value))
+        if (Physics2D.Raycast(transform.position, down, 8, player.value))
             _stats.speed = 10;
     }
 }
