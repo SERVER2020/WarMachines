@@ -28,10 +28,17 @@ public class InterceptorEnemy : BaseEnemy
 
     protected override void _Rotation()
     {
-        Vector3 direction = transform.position - playerTransform.position;
-        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.back);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _stats.rotationSpeed * Time.deltaTime);
+        if(playerTransform)
+        {
+            Vector3 direction = transform.position - playerTransform.position;
+            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.back);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _stats.rotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            return;
+        }
     }
 
     protected override IEnumerator _Fire()
