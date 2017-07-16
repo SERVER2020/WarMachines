@@ -3,7 +3,7 @@
     <ENEMYDATA>
       
       <ENEMY>Charger</ENEMY>
-      <SPAWNERPOSITION>50</SPAWNERPOSITION>
+      <SPAWNPOSITION>50</SPAWNPOSITION>
       <TIME>4</TIME>
       
     </ENEMYDATA>
