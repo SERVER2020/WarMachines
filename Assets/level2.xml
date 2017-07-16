@@ -1,11 +1,11 @@
-<LEVEL1>
+<LEVEL2>
   <CHECKPOINT>
     <ENEMYDATA>
       
-      <ENEMY>Bomber</ENEMY>
+      <ENEMY>Charger</ENEMY>
       <SPAWNERPOSITION>50</SPAWNERPOSITION>
       <TIME>4</TIME>
       
     </ENEMYDATA>
   </CHECKPOINT>
-</LEVEL1>
+</LEVEL2>
