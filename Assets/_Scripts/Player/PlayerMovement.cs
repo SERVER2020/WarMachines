@@ -11,7 +11,13 @@ public class Boundry
 public class PlayerMovement : MonoBehaviour
 {
     public float playerMovementSpeed = 0.0f;
+    public float fireTimer = 0.0f;
+    public float fireSpeed = 0.0f;
+
     public Boundry boundry;
+
+    public GameObject playerProjectile = null;
+    public GameObject firePoint = null;
 
     private GameObject player = null;
     private Rigidbody2D playerRigidBody;
@@ -48,6 +54,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void ProjectileFire()
     {
+        if(fireTimer >= 0.0f)
+        {
+            fireTimer -= Time.deltaTime;
+        }
 
+        if(Input.GetButton("Jump") && fireTimer <= 0.0f)
+        {
+            Instantiate(playerProjectile, firePoint.transform.position, firePoint.transform.localRotation);
+            fireTimer = fireSpeed;
+        }
     }
 }

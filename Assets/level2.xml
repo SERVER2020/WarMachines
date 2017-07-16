@@ -4,7 +4,19 @@
       
       <ENEMY>Charger</ENEMY>
       <SPAWNPOSITION>50</SPAWNPOSITION>
-      <TIME>4</TIME>
+      <TIME>5</TIME>
+
+      <ENEMY>Interceptor</ENEMY>
+      <SPAWNPOSITION>50</SPAWNPOSITION>
+      <TIME>10</TIME>
+
+      <ENEMY>Bomber</ENEMY>
+      <SPAWNPOSITION>50</SPAWNPOSITION>
+      <TIME>15</TIME>
+
+      <ENEMY>Orbiter</ENEMY>
+      <SPAWNPOSITION>50</SPAWNPOSITION>
+      <TIME>20</TIME>
       
     </ENEMYDATA>
   </CHECKPOINT>

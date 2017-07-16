@@ -20,6 +20,11 @@ public class BaseProjectile : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.GetComponent<PlayerHealth>() == null)
+        {
+            return;
+        }
+
         other.gameObject.GetComponent<PlayerHealth>().TakeDamage(_stats.damage);
         Destroy(this.gameObject);
     }
