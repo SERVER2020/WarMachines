@@ -22,7 +22,6 @@ public class InterceptorEnemy : BaseEnemy
 
     protected override void _Move()
     {
-        //relative = transform.InverseTransformDirection(Vector3.down);
         transform.Translate(Vector2.down * Time.deltaTime * _stats.speed);
     }
 

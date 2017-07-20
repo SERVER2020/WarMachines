@@ -28,6 +28,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
     protected virtual void _Move() { }
     protected virtual void _Rotation() { }
+    protected virtual void _AddPylon() { }
     protected virtual void _Charge() { }
     protected virtual IEnumerator _Fire() { return null; }
 
