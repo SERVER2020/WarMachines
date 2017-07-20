@@ -11,16 +11,15 @@ public class Pylon : BaseEnemy
     //only connects to nearest Pylong ship
     public Transform playerTransform = null;
     public GameObject player = null;
-    private Vector3 relative;
 
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.transform;
     }
 
     void Update()
     {
-        _Fire();
         _Move();
         _AddPylon();
     }
@@ -47,11 +46,18 @@ public class Pylon : BaseEnemy
     {
         while (true)
         {
+            if(electricShot == true)
+            {
+                //Vector3 direction = _stats.firePoints[1].transform.position;
+            }
+            yield return new WaitForSeconds(_stats.fireCooldownTime);
             if(electricShot == false)
+            {
                 foreach (Transform firePoint in _stats.firePoints)
                 {
                     Instantiate(_projectile, firePoint.position, firePoint.rotation);
                 }
+            }
             yield return new WaitForSeconds(_stats.fireCooldownTime);
         }
     }

@@ -3,7 +3,39 @@
     <ENEMYDATA>
       
       <ENEMY>Charger</ENEMY>
+      <SPAWNPOSITION>90</SPAWNPOSITION>
+      <TIME>5</TIME>
+
+      <ENEMY>Charger</ENEMY>
+      <SPAWNPOSITION>80</SPAWNPOSITION>
+      <TIME>5</TIME>
+
+      <ENEMY>Charger</ENEMY>
+      <SPAWNPOSITION>70</SPAWNPOSITION>
+      <TIME>5</TIME>
+
+      <ENEMY>Charger</ENEMY>
+      <SPAWNPOSITION>60</SPAWNPOSITION>
+      <TIME>5</TIME>
+
+      <ENEMY>Charger</ENEMY>
       <SPAWNPOSITION>50</SPAWNPOSITION>
+      <TIME>5</TIME>
+      
+      <ENEMY>Charger</ENEMY>
+      <SPAWNPOSITION>40</SPAWNPOSITION>
+      <TIME>5</TIME>
+
+      <ENEMY>Charger</ENEMY>
+      <SPAWNPOSITION>30</SPAWNPOSITION>
+      <TIME>5</TIME>
+
+      <ENEMY>Charger</ENEMY>
+      <SPAWNPOSITION>20</SPAWNPOSITION>
+      <TIME>5</TIME>
+
+      <ENEMY>Charger</ENEMY>
+      <SPAWNPOSITION>10</SPAWNPOSITION>
       <TIME>5</TIME>
 
       <ENEMY>Interceptor</ENEMY>
