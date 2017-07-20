@@ -27,6 +27,11 @@ public class Pylon : BaseEnemy
     protected override void _Move()
     {
         transform.Translate(Vector2.down * Time.deltaTime * _stats.speed);
+
+        if (transform.position.y <= -6)
+        {
+            transform.position = new Vector2(transform.position.x, 6);
+        }
     }
 
     protected override void _AddPylon()

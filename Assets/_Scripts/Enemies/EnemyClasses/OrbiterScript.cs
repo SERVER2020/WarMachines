@@ -25,6 +25,11 @@ public class OrbiterScript : BaseEnemy
     {
         relative = transform.InverseTransformDirection(Vector3.down);
         transform.Translate(relative * Time.deltaTime * _stats.speed);
+
+        if (transform.position.y <= -6)
+        {
+            transform.position = new Vector2(transform.position.x, 6);
+        }
     }
 
     protected override void _Rotation()

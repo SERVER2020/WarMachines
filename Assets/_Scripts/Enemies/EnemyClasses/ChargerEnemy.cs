@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChargerEnemy : BaseEnemy
 {
-
     LayerMask player;
 
     private void Start()
@@ -21,6 +20,11 @@ public class ChargerEnemy : BaseEnemy
     protected override void _Move()
     {
         transform.Translate(Vector3.down * Time.deltaTime * _stats.speed);
+
+        if (transform.position.y <= -6)
+        {
+            transform.position = new Vector2(transform.position.x, 6);
+        }
     }
 
     protected override void _Charge()

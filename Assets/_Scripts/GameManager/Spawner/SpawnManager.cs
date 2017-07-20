@@ -48,7 +48,7 @@ public class SpawnManager : MonoBehaviour
             foreach (EnemyData e in enemiesSpawning)
             {
                 float xPos = Screen.width * ((float)e.spawnPosition / 100);
-                float yPos = Screen.height + (Screen.height / 2);
+                float yPos = Screen.height + (Screen.height / 5);
                 Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(xPos, yPos, 10f));
 
                 BaseEnemy.CreateEnemy(_manager, e.name, pos);

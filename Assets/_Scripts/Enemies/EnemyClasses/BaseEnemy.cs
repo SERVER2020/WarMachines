@@ -23,7 +23,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         _manager = manager;
         if (_stats.firePoints.Length > 0)
             StartCoroutine(_Fire());
-        Destroy(this.gameObject, _stats.timeOutTime);
+        //Destroy(this.gameObject, _stats.timeOutTime);
     }
 
     protected virtual void _Move() { }

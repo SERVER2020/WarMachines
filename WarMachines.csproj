@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.2f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -92,6 +94,7 @@
   <ItemGroup>
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\BaseEnemy.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\ChargerEnemy.cs" />
+    <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\EnemyStats.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\InterceptorEnemy.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\OrbiterScript.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\Pylon.cs" />
@@ -100,7 +103,6 @@
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\InterceptorProjectile.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\ProjectileStats.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\StandardProjectile.cs" />
-    <Compile Include="Assets\_Scripts\Enemies\EnemyStats.cs" />
     <Compile Include="Assets\_Scripts\GameManager\GameManager.cs" />
     <Compile Include="Assets\_Scripts\GameManager\Spawner\EnemyData.cs" />
     <Compile Include="Assets\_Scripts\GameManager\Spawner\LevelReader.cs" />
@@ -111,7 +113,9 @@
     <Compile Include="Assets\_Scripts\Player\PlayerProjectile\PlayerProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\level2.xml" />
+    <None Include="Assets\level2.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
