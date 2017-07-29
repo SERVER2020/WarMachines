@@ -28,8 +28,9 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
     protected virtual void _Move() { }
     protected virtual void _Rotation() { }
-    protected virtual void _AddPylon() { }
     protected virtual void _Charge() { }
+    protected virtual void _AddOtherEnemy() { }
+    protected virtual void _DifferentShot() { }
     protected virtual IEnumerator _Fire() { return null; }
 
     public void TakeDamage(int damage)

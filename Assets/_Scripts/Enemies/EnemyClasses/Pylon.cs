@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class Pylon : BaseEnemy
 {
-    public GameObject[] otherPylon;
-    public bool electricShot = false;
-
+    private GameObject[] otherEnemy;
+    public Transform otherEnemyTransform;
+    public Vector2 otherEnemyReletivePosition;
+    private bool otherShot = false;
+    private bool fireDirection = false;
     //Add 3 firepoints, two of them will send out the electricity. 1 will be a standar fire point.
     //only connects to nearest Pylong ship
-    public Transform playerTransform = null;
-    public GameObject player = null;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = player.transform;
+
     }
 
     void Update()
     {
         _Move();
-        _AddPylon();
+        _AddOtherEnemy();
+        _DifferentShot();
+
     }
 
     protected override void _Move()
@@ -34,16 +35,35 @@ public class Pylon : BaseEnemy
         }
     }
 
-    protected override void _AddPylon()
+    protected override void _AddOtherEnemy()
     {
-        otherPylon = GameObject.FindGameObjectsWithTag("Pylon");
-        if(otherPylon.Length <= 1)
+        otherEnemy = GameObject.FindGameObjectsWithTag("Pylon");
+        if (otherEnemy.Length <= 1)
         {
-            electricShot = false;
+            otherShot = false;
         }
         else
         {
-            electricShot = true;
+            otherShot = true;
+        }
+    }
+
+    protected override void _DifferentShot()
+    {
+        if(otherEnemy.Length > 1)
+        {
+            otherEnemyTransform = otherEnemy[1].transform;
+            otherEnemyReletivePosition = otherEnemyTransform.InverseTransformPoint(transform.position);
+            if (otherEnemyReletivePosition.x > 0)
+            {
+                fireDirection = false;
+                Debug.Log("To The Left");
+            }
+            if (otherEnemyReletivePosition.x < 0)
+            {
+                fireDirection = true;
+                Debug.Log("To The Right");
+            }
         }
     }
 
@@ -51,12 +71,21 @@ public class Pylon : BaseEnemy
     {
         while (true)
         {
-            if(electricShot == true)
+            if(otherShot == true)
             {
+                if(fireDirection == false)
+                {
+                    Instantiate(_projectile, _stats.firePoints[1].transform.position, _stats.firePoints[1].transform.rotation);
+                }
+                else
+                {
+                    Instantiate(_projectile, _stats.firePoints[2].transform.position, _stats.firePoints[2].transform.rotation);
+                }
+
                 //Vector3 direction = _stats.firePoints[1].transform.position;
             }
             yield return new WaitForSeconds(_stats.fireCooldownTime);
-            if(electricShot == false)
+            if(otherShot == false)
             {
                 foreach (Transform firePoint in _stats.firePoints)
                 {

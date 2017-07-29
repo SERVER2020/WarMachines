@@ -12,4 +12,7 @@ public class EnemyStats
     public float timeOutTime = 5.0f;
     public float fireCooldownTime = 1.0f;
     public Transform[] firePoints;
+    public Transform playerTransform = null;
+    public GameObject player = null;
+    public Vector3 relative;
 }

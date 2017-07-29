@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class InterceptorEnemy : BaseEnemy
 {
-    public Transform playerTransform = null;
-    public GameObject player = null;
-    private Vector3 relative;
-
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = player.transform;
+        _stats.player = GameObject.FindGameObjectWithTag("Player");
+        _stats.playerTransform = _stats.player.transform;
     }
 
     void Update()
@@ -27,9 +23,9 @@ public class InterceptorEnemy : BaseEnemy
 
     protected override void _Rotation()
     {
-        if(playerTransform)
+        if(_stats.playerTransform)
         {
-            Vector3 direction = transform.position - playerTransform.position;
+            Vector3 direction = transform.position - _stats.playerTransform.position;
             float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.back);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _stats.rotationSpeed * Time.deltaTime);

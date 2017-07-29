@@ -5,14 +5,10 @@ using UnityEngine;
 public class OrbiterScript : BaseEnemy
 {
 
-    public Transform playerTransform = null;
-    public GameObject player = null;
-    private Vector3 relative;
-
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = player.transform;
+        _stats.player = GameObject.FindGameObjectWithTag("Player");
+        _stats.playerTransform = _stats.player.transform;
     }
 
     void Update()
@@ -23,8 +19,8 @@ public class OrbiterScript : BaseEnemy
 
     protected override void _Move()
     {
-        relative = transform.InverseTransformDirection(Vector3.down);
-        transform.Translate(relative * Time.deltaTime * _stats.speed);
+        _stats.relative = transform.InverseTransformDirection(Vector3.down);
+        transform.Translate(_stats.relative * Time.deltaTime * _stats.speed);
 
         if (transform.position.y <= -6)
         {
@@ -34,16 +30,16 @@ public class OrbiterScript : BaseEnemy
 
     protected override void _Rotation()
     {
-        if (playerTransform)
+        if (_stats.playerTransform)
         {
-            Vector3 direction = transform.position - playerTransform.position;
+            Vector3 direction = transform.position - _stats.playerTransform.position;
             float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.back);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _stats.rotationSpeed * Time.deltaTime);
         }
         else
         {
-            return;
+            return;           
         }
     }
 
