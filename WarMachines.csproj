@@ -99,6 +99,7 @@
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\OrbiterScript.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\Pylon.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\StandardEnemy.cs" />
+    <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\WarpMine.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\BaseProjectile.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\InterceptorProjectile.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\ProjectileStats.cs" />

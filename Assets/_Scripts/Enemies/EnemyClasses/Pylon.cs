@@ -12,9 +12,20 @@ public class Pylon : BaseEnemy
     //Add 3 firepoints, two of them will send out the electricity. 1 will be a standar fire point.
     //only connects to nearest Pylong ship
 
+    //Adding Line Renderer
+    public LineRenderer laser;
+
+    private Transform origin = null;
+    private Transform destination = null;
+
+    private float counter;
+    private float distance;
+
+    public float laserDrawSpeed = 6.0f;
+
     void Start()
     {
-
+        laser = gameObject.GetComponent<LineRenderer>();
     }
 
     void Update()
@@ -57,13 +68,38 @@ public class Pylon : BaseEnemy
             if (otherEnemyReletivePosition.x > 0)
             {
                 fireDirection = false;
+
+                origin = _stats.firePoints[1].transform;
+                destination = otherEnemy[1].transform;
                 Debug.Log("To The Left");
             }
             if (otherEnemyReletivePosition.x < 0)
             {
                 fireDirection = true;
+
+                origin = _stats.firePoints[2].transform;
+                destination = otherEnemy[1].transform;
                 Debug.Log("To The Right");
             }
+        }
+
+        if (counter < distance)
+        {
+
+            //laser.SetPosition(0, origin.position);
+
+            distance = Vector2.Distance(origin.position, destination.position);
+
+            counter += 0.1f / laserDrawSpeed;
+
+            float x = Mathf.Lerp(0, distance, counter);
+
+            Vector2 pointA = origin.position;
+            Vector2 pointB = destination.position;
+
+            Vector2 pointAlongLine = x * (pointB - pointA) + pointA;
+
+            laser.SetPosition(0, pointAlongLine);
         }
     }
 
