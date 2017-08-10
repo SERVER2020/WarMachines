@@ -103,6 +103,7 @@
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\BaseProjectile.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\InterceptorProjectile.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\ProjectileStats.cs" />
+    <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\PylonLaser.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\StandardProjectile.cs" />
     <Compile Include="Assets\_Scripts\GameManager\GameManager.cs" />
     <Compile Include="Assets\_Scripts\GameManager\Spawner\EnemyData.cs" />

@@ -1,10 +1,14 @@
 <LEVEL2>
   <CHECKPOINT>
     <ENEMYDATA>
-
+      
       <ENEMY>Warp Mine</ENEMY>
       <SPAWNPOSITION>50</SPAWNPOSITION>
       <TIME>2</TIME>
+
+      <ENEMY>Pylon</ENEMY>
+      <SPAWNPOSITION>50</SPAWNPOSITION>
+      <TIME>20</TIME>
       
     </ENEMYDATA>
   </CHECKPOINT>

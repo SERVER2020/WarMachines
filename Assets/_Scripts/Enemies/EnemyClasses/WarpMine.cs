@@ -19,26 +19,29 @@ public class WarpMine : BaseEnemy
 
     protected override void _Move()
     {
+
+        _stats.relative = transform.InverseTransformDirection(Vector3.down);
+        transform.Translate(_stats.relative * Time.deltaTime * _stats.speed);
+
         if (_stats.playerTransform)
         {
             _stats.distance = Vector2.Distance(_stats.playerTransform.position, transform.position);
             Debug.Log(_stats.distance);
-            if (_stats.distance < 3.0f)
+            if (_stats.distance < 3.0f && _stats.timeOutTime <= 0)
             {
-                _stats.speed = 0.0f;
+                _stats.timeOutTime = 1.2f;
             }
-            else
-            {
-                _stats.speed = 3.0f;
-            }
+        }
+
+        if (_stats.timeOutTime >= 0)
+        {
+            _stats.timeOutTime -= Time.deltaTime;
+            _stats.speed = 0.0f;
         }
         else
         {
             _stats.speed = 2.0f;
         }
-
-        _stats.relative = transform.InverseTransformDirection(Vector3.down);
-        transform.Translate(_stats.relative * Time.deltaTime * _stats.speed);
 
         if (transform.position.y <= -6)
         {
@@ -48,7 +51,15 @@ public class WarpMine : BaseEnemy
 
     protected override void _Rotation()
     {
-        transform.Rotate(Vector3.back * _stats.rotationSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.back * _stats.rotationSpeed * Time.deltaTime);
+            if (_stats.timeOutTime >= 0.0f)
+            {
+                _stats.rotationSpeed = 0.0f;
+            }
+            else
+            {
+                _stats.rotationSpeed= 200.0f;
+            }
     }
 
     protected override IEnumerator _Fire()
@@ -56,12 +67,12 @@ public class WarpMine : BaseEnemy
         while (true)
         {
 
-            if (_stats.distance > 3.0f)
+            if (_stats.timeOutTime <= 0.0f)
             {
                 
             }
             yield return new WaitForSeconds(_stats.fireCooldownTime);
-            if (_stats.distance < 3.0f)
+            if (_stats.timeOutTime >= 0.0f)
             {
                 foreach (Transform firePoint in _stats.firePoints)
                 {

@@ -2,18 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StandardProjectile : BaseProjectile
+public class PylonLaser : BaseProjectile
 {
-    protected override void Start()
-    {
-        Destroy(this.gameObject, _stats.timeOutTime);
-    }
-
-    protected override void Move()
-    {
-        transform.Translate(Vector3.down * Time.deltaTime * _stats.speed);
-    }
-
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<PlayerHealth>() == null)
@@ -22,6 +12,5 @@ public class StandardProjectile : BaseProjectile
         }
 
         other.gameObject.GetComponent<PlayerHealth>().TakeDamage(_stats.damage);
-        Destroy(this.gameObject);
     }
 }
