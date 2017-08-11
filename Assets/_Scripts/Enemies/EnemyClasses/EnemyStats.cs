@@ -16,4 +16,5 @@ public class EnemyStats
     public Transform playerTransform = null;
     public GameObject player = null;
     public Vector3 relative;
+    public bool fire = false;
 }

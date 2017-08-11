@@ -5,8 +5,6 @@ using UnityEngine;
 public class Pylon : BaseEnemy
 {
 
-    private bool fire = false;
-
     void Update()
     {
         _Move();
@@ -26,7 +24,7 @@ public class Pylon : BaseEnemy
     {
         while (true)
         {
-            if(fire == true)
+            if(_stats.fire == true)
             {
                 foreach (Transform firePoint in _stats.firePoints)
                 {

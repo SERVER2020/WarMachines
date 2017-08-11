@@ -32,6 +32,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     protected virtual void _AddOtherEnemy() { }
     protected virtual void _DifferentShot() { }
     protected virtual IEnumerator _Fire() { return null; }
+    protected virtual void _SecondaryFire() { }
 
     public void TakeDamage(int damage)
     {

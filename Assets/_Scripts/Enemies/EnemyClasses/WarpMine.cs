@@ -15,6 +15,7 @@ public class WarpMine : BaseEnemy
     {
         _Move();
         _Rotation();
+        _SecondaryFire();
     }
 
     protected override void _Move()
@@ -26,7 +27,7 @@ public class WarpMine : BaseEnemy
         if (_stats.playerTransform)
         {
             _stats.distance = Vector2.Distance(_stats.playerTransform.position, transform.position);
-            Debug.Log(_stats.distance);
+
             if (_stats.distance < 3.0f && _stats.timeOutTime <= 0)
             {
                 _stats.timeOutTime = 1.2f;
@@ -49,6 +50,17 @@ public class WarpMine : BaseEnemy
         }
     }
 
+    protected override void _SecondaryFire()
+    {
+        if(_stats.timeOutTime > 1.17f)
+        {
+            foreach (Transform firePoint in _stats.firePoints)
+            {
+                Instantiate(_projectile, firePoint.position, firePoint.rotation);
+            }
+        }
+    }
+
     protected override void _Rotation()
     {
             transform.Rotate(Vector3.back * _stats.rotationSpeed * Time.deltaTime);
@@ -67,12 +79,12 @@ public class WarpMine : BaseEnemy
         while (true)
         {
 
-            if (_stats.timeOutTime <= 0.0f)
+            if (_stats.timeOutTime <= 0.0f && _stats.fire == true)
             {
                 
             }
             yield return new WaitForSeconds(_stats.fireCooldownTime);
-            if (_stats.timeOutTime >= 0.0f)
+            if (_stats.timeOutTime >= 0.0f && _stats.fire == true)
             {
                 foreach (Transform firePoint in _stats.firePoints)
                 {
