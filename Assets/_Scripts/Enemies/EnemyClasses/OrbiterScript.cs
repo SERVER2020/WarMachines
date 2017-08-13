@@ -5,12 +5,6 @@ using UnityEngine;
 public class OrbiterScript : BaseEnemy
 {
 
-    void Start()
-    {
-        _stats.player = GameObject.FindGameObjectWithTag("Player");
-        _stats.playerTransform = _stats.player.transform;
-    }
-
     void Update()
     {
         _Move();

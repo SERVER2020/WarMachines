@@ -5,12 +5,6 @@ using UnityEngine;
 public class WarpMine : BaseEnemy
 {
 
-    void Start()
-    {
-        _stats.player = GameObject.FindGameObjectWithTag("Player");
-        _stats.playerTransform = _stats.player.transform;
-    }
-
     void Update()
     {
         _Move();

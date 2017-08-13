@@ -2,13 +2,29 @@
   <CHECKPOINT>
     <ENEMYDATA>
       
-      <ENEMY>Warp Mine</ENEMY>
+      <ENEMY>Bomber</ENEMY>
       <SPAWNPOSITION>50</SPAWNPOSITION>
       <TIME>2</TIME>
 
-      <ENEMY>Pylon</ENEMY>
-      <SPAWNPOSITION>50</SPAWNPOSITION>
-      <TIME>20</TIME>
+      <ENEMY>Bomber</ENEMY>
+      <SPAWNPOSITION>55</SPAWNPOSITION>
+      <TIME>5</TIME>
+
+      <ENEMY>BossTest</ENEMY>
+      <SPAWNPOSITION>40</SPAWNPOSITION>
+      <TIME>6</TIME>
+
+      <ENEMY>Charger</ENEMY>
+      <SPAWNPOSITION>70</SPAWNPOSITION>
+      <TIME>10</TIME>
+
+      <ENEMY>Warp Mine</ENEMY>
+      <SPAWNPOSITION>80</SPAWNPOSITION>
+      <TIME>10</TIME>
+
+      <ENEMY>Orbiter</ENEMY>
+      <SPAWNPOSITION>10</SPAWNPOSITION>
+      <TIME>10</TIME>
       
     </ENEMYDATA>
   </CHECKPOINT>

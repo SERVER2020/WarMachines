@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class ChargerEnemy : BaseEnemy
 {
-    LayerMask player;
-
-    private void Start()
-    {
-        player = 1 << LayerMask.NameToLayer("Player");
-    }
 
     void Update()
     {
@@ -31,7 +25,7 @@ public class ChargerEnemy : BaseEnemy
     {
         Vector2 down = transform.TransformDirection(Vector2.down);
 
-        if (Physics2D.Raycast(transform.position, down, 8, player.value))
+        if (Physics2D.Raycast(transform.position, down, 8, _stats.playerLayer.value))
             _stats.speed = 10;
     }
 }

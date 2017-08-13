@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class InterceptorEnemy : BaseEnemy
 {
-    void Start()
-    {
-        _stats.player = GameObject.FindGameObjectWithTag("Player");
-        _stats.playerTransform = _stats.player.transform;
-    }
 
     void Update()
     {

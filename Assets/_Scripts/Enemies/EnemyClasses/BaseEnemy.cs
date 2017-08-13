@@ -11,6 +11,16 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
     public float Health { get { return _stats.health; } }
 
+    public void Start()
+    {
+        _stats.player = GameObject.FindGameObjectWithTag("Player");
+        _stats.playerTransform = _stats.player.transform;
+        _stats.playerLayer = 1 << LayerMask.NameToLayer("Player");
+
+        if (_stats.firePoints.Length > 0)
+            StartCoroutine(_Fire());
+    }
+
     public static GameObject CreateEnemy(GameManager manager, string enemyName, Vector3 position)
     {
         GameObject enemy = Instantiate(Resources.Load("Enemies/" + enemyName), position, Quaternion.identity) as GameObject;
@@ -21,9 +31,6 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     public void Initialize(GameManager manager)
     {
         _manager = manager;
-        if (_stats.firePoints.Length > 0)
-            StartCoroutine(_Fire());
-        //Destroy(this.gameObject, _stats.timeOutTime);
     }
 
     protected virtual void _Move() { }
