@@ -11,6 +11,7 @@ public class EnemyStats
     public float rotationSpeed = 5.0f;
     public float timeOutTime = 5.0f;
     public float fireCooldownTime = 1.0f;
+    public float movementCooldownTime = 0.0f;
     public float distance = 0.0f;
     public Transform[] firePoints;
     public Transform playerTransform = null;

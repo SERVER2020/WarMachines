@@ -94,11 +94,13 @@
   <ItemGroup>
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\BaseEnemy.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\ChargerEnemy.cs" />
+    <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\Dragoon.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\EnemyStats.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\InterceptorEnemy.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\OrbiterScript.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\Pylon.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\StandardEnemy.cs" />
+    <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\TestEnemies\InterceptorTestEnemy.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyClasses\WarpMine.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\BaseProjectile.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\InterceptorProjectile.cs" />
