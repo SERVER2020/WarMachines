@@ -8,7 +8,7 @@ public class PlayerProjectile : MonoBehaviour
 
     protected void Start()
     {
-        Destroy(this.gameObject, _stats.timeOutTime);
+        
     }
 
     protected void Update()
@@ -19,6 +19,10 @@ public class PlayerProjectile : MonoBehaviour
     protected virtual void Move()
     {
         transform.Translate(Vector3.up * Time.deltaTime * _stats.speed);
+        if(transform.position.y > 5.0f)
+        {
+            Destroy();
+        }
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
@@ -29,6 +33,16 @@ public class PlayerProjectile : MonoBehaviour
         }
 
         other.gameObject.GetComponent<BaseEnemy>().TakeDamage(_stats.damage);
-        Destroy(this.gameObject);
+        Destroy();
+    }
+
+    private void Destroy()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 }

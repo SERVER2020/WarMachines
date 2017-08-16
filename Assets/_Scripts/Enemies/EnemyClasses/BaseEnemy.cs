@@ -13,12 +13,13 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
     public void Start()
     {
-        _stats.player = GameObject.FindGameObjectWithTag("Player");
-        _stats.playerTransform = _stats.player.transform;
-        _stats.playerLayer = 1 << LayerMask.NameToLayer("Player");
-
         if (_stats.firePoints.Length > 0)
             StartCoroutine(_Fire());
+
+        _stats.player = GameObject.FindGameObjectWithTag("Player");
+        _stats.playerTransform = _stats.player.transform;
+        
+        _stats.playerLayer = 1 << LayerMask.NameToLayer("Player");
     }
 
     public static GameObject CreateEnemy(GameManager manager, string enemyName, Vector3 position)

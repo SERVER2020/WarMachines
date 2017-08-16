@@ -106,6 +106,7 @@
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\PylonLaser.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyProjectiles\StandardProjectile.cs" />
     <Compile Include="Assets\_Scripts\GameManager\GameManager.cs" />
+    <Compile Include="Assets\_Scripts\GameManager\ObjectPooler\ObjectPooler.cs" />
     <Compile Include="Assets\_Scripts\GameManager\Spawner\EnemyData.cs" />
     <Compile Include="Assets\_Scripts\GameManager\Spawner\LevelReader.cs" />
     <Compile Include="Assets\_Scripts\GameManager\Spawner\SpawnManager.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets\_Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerProjectile\PlayerProjectile.cs" />
+    <Compile Include="Assets\_Scripts\Player\PlayerShooting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\level2.xml">
