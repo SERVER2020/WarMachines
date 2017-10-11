@@ -2,10 +2,10 @@
   <CHECKPOINT>
     <ENEMYDATA>
       
-      <ENEMY>Charger</ENEMY>
-      <SPAWNPOSITION>10</SPAWNPOSITION>
-      <TIME>50</TIME>
-      
+      <ENEMY>Dragoon</ENEMY>
+      <SPAWNPOSITION>50</SPAWNPOSITION>
+      <TIME>5</TIME>
+
     </ENEMYDATA>
   </CHECKPOINT>
 </LEVEL2>
